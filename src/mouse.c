@@ -130,8 +130,6 @@ void moveMouseRelative(MMPoint point)
 #elif defined(USE_X11)
  //linux implementation
 #elif defined(IS_WINDOWS)
-	//Mouse motion is now done using SendInput with MOUSEINPUT. We use Absolute mouse positioning
-	#define MOUSE_COORD_TO_ABS(coord, width_or_height) (((65536 * coord) / width_or_height) + (coord < 0 ? -1 : 1))
 	INPUT mouseInput;
 	mouseInput.type = INPUT_MOUSE;
 	mouseInput.mi.dx = point.x;
