@@ -1,3 +1,4 @@
+<strong style="color:red;text-align:center;display:block;">This is a fork of the official robotjs with a few modifications to fix keyToggle not working properly under windows as well as an implmentation of moveMouseRelative which is better supported by games such as 3d shooters</strong>
 <p align="center"><img src="https://cldup.com/1ATDf2JMtv.png"></p>
 
 <p align="center"><a href="https://travis-ci.org/octalmage/robotjs"><img src="https://api.travis-ci.org/octalmage/robotjs.svg?branch=master"></a> <a href="https://ci.appveyor.com/project/octalmage/robotjs"><img src="https://ci.appveyor.com/api/projects/status/qh2eqb37j7ap6x36?svg=true"></a> <a href="https://www.npmjs.com/package/robotjs"><img src="https://img.shields.io/npm/v/robotjs.svg"></a> <a href="https://gitter.im/octalmage/robotjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://img.shields.io/badge/gitter-join%20chat-blue.svg"></a> <a href="http://waffle.io/octalmage/robotjs"><img src="https://img.shields.io/waffle/label/octalmage/robotjs/ready.svg?maxAge=3600"></a></p>
@@ -141,15 +142,15 @@ See the [node-gyp readme](https://github.com/nodejs/node-gyp#installation) for m
 
 ## FAQ
 
-#### Does RobotJS support global hotkeys? 
+#### Does RobotJS support global hotkeys?
 
-Not currently, and I don't know if it ever will. I personally use [Electron](http://electron.atom.io/)/[NW.js](http://nwjs.io/) for global hotkeys, and this works well. Later on I might add hotkey support or create a separate module. See [#55](https://github.com/octalmage/robotjs/issues/55) for details. 
+Not currently, and I don't know if it ever will. I personally use [Electron](http://electron.atom.io/)/[NW.js](http://nwjs.io/) for global hotkeys, and this works well. Later on I might add hotkey support or create a separate module. See [#55](https://github.com/octalmage/robotjs/issues/55) for details.
 
-#### Can I take a screenshot with RobotJS? 
+#### Can I take a screenshot with RobotJS?
 
-Soon! This is a bit more complicated than the rest of the features, so I saved it for last. Luckily the code is already there, I just need to write the bindings, and I've already started. Subscribe to [#13](https://github.com/octalmage/robotjs/issues/13) for updates. 
+Soon! This is a bit more complicated than the rest of the features, so I saved it for last. Luckily the code is already there, I just need to write the bindings, and I've already started. Subscribe to [#13](https://github.com/octalmage/robotjs/issues/13) for updates.
 
-#### Why is &#60;insert key&#62; missing from the keyboard functions? 
+#### Why is &#60;insert key&#62; missing from the keyboard functions?
 
 We've been implementing keys as we need them. Feel free to create an issue or submit a pull request!
 
@@ -161,15 +162,15 @@ For any other questions please [submit an issue](https://github.com/octalmage/ro
 
 ## Story
 
-I'm a huge fan of [AutoHotkey](https://www.autohotkey.com/), and I've used it for a very long time. AutoHotkey is great for automation and it can do a bunch of things that are very difficult in other languages. For example, it's [imagesearch](https://www.autohotkey.com/docs/commands/ImageSearch.htm) and [pixel](https://www.autohotkey.com/docs/commands/PixelGetColor.htm) related functions are hard to reproduce on Mac, especially in scripting languages. These functions are great for automating apps that can't be automated like [Netflix](http://blueshirtdesign.com/apps/autoflix/). This has never been a big deal since I've always used Windows at work, but for the past few years I've been using Mac exclusively. 
+I'm a huge fan of [AutoHotkey](https://www.autohotkey.com/), and I've used it for a very long time. AutoHotkey is great for automation and it can do a bunch of things that are very difficult in other languages. For example, it's [imagesearch](https://www.autohotkey.com/docs/commands/ImageSearch.htm) and [pixel](https://www.autohotkey.com/docs/commands/PixelGetColor.htm) related functions are hard to reproduce on Mac, especially in scripting languages. These functions are great for automating apps that can't be automated like [Netflix](http://blueshirtdesign.com/apps/autoflix/). This has never been a big deal since I've always used Windows at work, but for the past few years I've been using Mac exclusively.
 
-I like AutoHotkey, but I like Node.js more. By developing RobotJS I get an AutoHotkey replacement on Mac (finally!), and I get to use my favorite language. 
+I like AutoHotkey, but I like Node.js more. By developing RobotJS I get an AutoHotkey replacement on Mac (finally!), and I get to use my favorite language.
 
-**TLDR:** There's nothing like AutoHotkey on Mac, so I'm making it. 
+**TLDR:** There's nothing like AutoHotkey on Mac, so I'm making it.
 
 ## License
 
 MIT
 
-Based on [autopy](https://github.com/msanders/autopy). 
+Based on [autopy](https://github.com/msanders/autopy).
 Maintained by [Jason Stallings](http://jason.stallin.gs).
