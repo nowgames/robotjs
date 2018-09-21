@@ -105,6 +105,24 @@ NAN_METHOD(moveMouse)
 	info.GetReturnValue().Set(Nan::New(1));
 }
 
+
+NAN_METHOD(moveMouseRelative)
+{
+	if (info.Length() != 2)
+	{
+		return Nan::ThrowError("Invalid number of arguments.");
+	}
+	short x = info[0]->Int32Value();
+	short y = info[1]->Int32Value();
+
+	MMPoint point;
+	point = MMPointMake(x, y);
+	moveMouseRelative(point);
+	microsleep(mouseDelay);
+
+	info.GetReturnValue().Set(Nan::New(1));
+}
+
 NAN_METHOD(moveMouseSmooth)
 {
 	if (info.Length() != 2)
@@ -819,6 +837,9 @@ NAN_MODULE_INIT(InitAll)
 
 	Nan::Set(target, Nan::New("moveMouse").ToLocalChecked(),
 		Nan::GetFunction(Nan::New<FunctionTemplate>(moveMouse)).ToLocalChecked());
+
+	Nan::Set(target, Nan::New("moveMouseRelative").ToLocalChecked(),
+		Nan::GetFunction(Nan::New<FunctionTemplate>(moveMouseRelative)).ToLocalChecked());
 
 	Nan::Set(target, Nan::New("moveMouseSmooth").ToLocalChecked(),
 		Nan::GetFunction(Nan::New<FunctionTemplate>(moveMouseSmooth)).ToLocalChecked());

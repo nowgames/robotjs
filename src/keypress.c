@@ -99,7 +99,7 @@ void win32KeyEvent(int key, MMKeyFlags flags)
 
 	/* Set the scan code for keyup */
 	if ( flags & KEYEVENTF_KEYUP ) {
-		scan |= 0x80;
+		/*scan |= 0x80;*/
 	}
 
 	keybd_event(key, scan, flags, 0);

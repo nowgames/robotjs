@@ -122,6 +122,29 @@ void moveMouse(MMPoint point)
 #endif
 }
 
+
+void moveMouseRelative(MMPoint point)
+{
+#if defined(IS_MACOSX)
+	//Osx Implementation
+#elif defined(USE_X11)
+ //linux implementation
+#elif defined(IS_WINDOWS)
+	//Mouse motion is now done using SendInput with MOUSEINPUT. We use Absolute mouse positioning
+	#define MOUSE_COORD_TO_ABS(coord, width_or_height) (((65536 * coord) / width_or_height) + (coord < 0 ? -1 : 1))
+	INPUT mouseInput;
+	mouseInput.type = INPUT_MOUSE;
+	mouseInput.mi.dx = point.x;
+	mouseInput.mi.dy = point.y;
+	mouseInput.mi.dwFlags = MOUSEEVENTF_MOVE;
+	mouseInput.mi.time = 0; //System will provide the timestamp
+	mouseInput.mi.dwExtraInfo = 0;
+	mouseInput.mi.mouseData = 0;
+	SendInput(1, &mouseInput, sizeof(mouseInput));
+
+#endif
+}
+
 void dragMouse(MMPoint point, const MMMouseButton button)
 {
 #if defined(IS_MACOSX)
